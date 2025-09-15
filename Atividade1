@@ -1,0 +1,63 @@
+// Exercicio Casa POO
+//Incluir codigo no github e enviar no grupo da disciplina
+
+// 1. Implementar Raça 
+// 2. Implementar ação de Voar e Andar
+
+
+class Animal {
+
+    String nome;
+    String raca;    // Atributo raça implementado
+
+    public Animal(String nome) {
+        this.nome = nome;
+    }
+    public void comer() {
+        System.out.println(nome + " está comendo.");
+    }
+    public void andar() {
+        System.out.println(nome + " está andando.");
+    }
+}
+
+class Cachorro extends Animal {
+    
+    public Cachorro(String nome, String raca) {
+        super(nome);
+        this.raca = raca; // Inicializa o atributo raça
+    }
+    public void latir() {
+        System.out.println(nome + " está latindo: Au au!");
+    }
+}
+class Ave extends Animal {
+    
+    public Ave(String nome, String raca) {
+
+        super(nome);
+        this.raca = raca; // Inicializa o atributo raça
+    }
+    public void voar() {
+        System.out.println(nome + " Voar, voar, subir, subir."); // Implementação do método voar
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        Cachorro meuCachorro = new Cachorro("Rick", "Rottweiler");
+
+        System.out.println("Nome do cachorro: " + meuCachorro.nome + " Raça: " + meuCachorro.raca);
+        meuCachorro.comer();
+        meuCachorro.andar(); // Usando o método herdado da classe pai (Animal)
+        meuCachorro.latir();
+
+        Ave minhaAve = new Ave("Pacapapim", "Arara");
+
+        System.out.println("Nome da ave: " + minhaAve.nome + " Raça: " + minhaAve.raca);
+        minhaAve.comer();
+        minhaAve.andar(); // Usando o método herdado da classe pai (Animal)
+        minhaAve.voar(); // Usando o método específico da classe filha (Ave)
+    }
+}
